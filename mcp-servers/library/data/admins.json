@@ -1,11 +1,6 @@
 {
   "admins": [
     {
-      "username": "superadmin",
-      "password": "admin123",
-      "role": "superadmin"
-    },
-    {
       "username": "Parijat",
       "password": "campusiq#Parijat@123",
       "role": "admin"

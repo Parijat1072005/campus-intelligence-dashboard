@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenerativeAI, FunctionDeclaration, Tool } from "@google/generative-ai";
+import { GoogleGenerativeAI, FunctionDeclaration, Tool, SchemaType } from "@google/generative-ai";
 import { CAMPUS_TOOLS, parseToolName } from "@/lib/tools";
 import type { MCPServerName } from "@/types";
 
@@ -53,11 +53,11 @@ function toGeminiTools(): Tool[] {
     name: t.function.name,
     description: t.function.description,
     parameters: {
-      type: "OBJECT" as const,
+      type: SchemaType.OBJECT,
       properties: Object.fromEntries(
         Object.entries(t.function.parameters.properties || {}).map(([k, v]) => {
           const prop = v as Record<string, unknown>;
-          const geminiProp: Record<string, unknown> = { type: (String(prop.type || "STRING")).toUpperCase() };
+          const geminiProp: Record<string, unknown> = { type: SchemaType[(String(prop.type || "STRING")).toUpperCase() as keyof typeof SchemaType] };
           if (prop.description) geminiProp.description = prop.description;
           if (prop.enum)        geminiProp.enum = prop.enum;
           return [k, geminiProp];
@@ -107,12 +107,12 @@ export async function POST(req: NextRequest) {
      * On quota error it upgrades `modelUsed` and retries with the next model.
      */
     async function sendWithFallback(
-      payload: Parameters<ReturnType<typeof genAI.getGenerativeModel>["startChat"]>["sendMessage"] extends (p: infer P) => unknown ? P : never,
-      currentChat: ReturnType<ReturnType<typeof genAI.getGenerativeModel>["startChat"]>
+      payload: any,
+      currentChat: any
     ) {
       // Try the current chat first
       try {
-        return await currentChat.sendMessage(payload as never);
+        return await currentChat.sendMessage(payload);
       } catch (err) {
         const msg = err instanceof Error ? err.message : "";
         if (!msg.includes("429")) throw err;
@@ -166,12 +166,12 @@ export async function POST(req: NextRequest) {
       if (!candidate) break;
 
       const parts = candidate.content?.parts || [];
-      const functionCallParts = parts.filter((p) => p.functionCall);
-      const textParts = parts.filter((p) => p.text);
+      const functionCallParts = parts.filter((p: any) => p.functionCall);
+      const textParts = parts.filter((p: any) => p.text);
 
       // Accumulate text from every turn (final answer may come in any turn)
       if (textParts.length > 0) {
-        const turnText = textParts.map((p) => p.text).join("");
+        const turnText = textParts.map((p: any) => p.text).join("");
         if (turnText.trim()) finalText = turnText; // keep the latest non-empty text
       }
 
