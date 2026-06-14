@@ -1,0 +1,41 @@
+import { NextResponse } from "next/server";
+import type { MCPServerName } from "@/types";
+
+const SERVERS: Record<MCPServerName, string> = {
+  library: process.env.LIBRARY_MCP_URL || "http://localhost:3001",
+  cafeteria: process.env.CAFETERIA_MCP_URL || "http://localhost:3002",
+  events: process.env.EVENTS_MCP_URL || "http://localhost:3003",
+  academics: process.env.ACADEMICS_MCP_URL || "http://localhost:3004",
+};
+
+export async function GET() {
+  const results = await Promise.allSettled(
+    Object.entries(SERVERS).map(async ([name, url]) => {
+      const start = Date.now();
+      try {
+        const res = await fetch(`${url}/health`, {
+          signal: AbortSignal.timeout(3000),
+        });
+        return {
+          server: name as MCPServerName,
+          online: res.ok,
+          latencyMs: Date.now() - start,
+        };
+      } catch {
+        return {
+          server: name as MCPServerName,
+          online: false,
+          latencyMs: Date.now() - start,
+        };
+      }
+    })
+  );
+
+  const statuses = results.map((r) =>
+    r.status === "fulfilled"
+      ? r.value
+      : { server: "unknown", online: false, latencyMs: 0 }
+  );
+
+  return NextResponse.json({ statuses, checkedAt: new Date().toISOString() });
+}

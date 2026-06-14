@@ -1,0 +1,53 @@
+{
+  "exams": [
+    { "courseCode": "CS301", "courseName": "Data Structures & Algorithms", "examDate": "2026-06-19", "examTime": "9:00 AM", "venue": "Exam Hall A", "duration": "3 hours", "type": "mid-term" },
+    { "courseCode": "MA201", "courseName": "Engineering Mathematics III", "examDate": "2026-06-21", "examTime": "2:00 PM", "venue": "Exam Hall B", "duration": "3 hours", "type": "mid-term" },
+    { "courseCode": "CS302", "courseName": "Operating Systems", "examDate": "2026-06-23", "examTime": "9:00 AM", "venue": "Exam Hall A", "duration": "3 hours", "type": "mid-term" },
+    { "courseCode": "CS304", "courseName": "Computer Networks", "examDate": "2026-06-17", "examTime": "11:00 AM", "venue": "CS Lab 301", "duration": "2 hours", "type": "quiz" }
+  ],
+  "calendar": [
+    { "id": "ac001", "title": "Mid-Term Examination Week", "date": "2026-06-19", "endDate": "2026-06-28", "type": "exam", "description": "Mid-semester examinations for all programs" },
+    { "id": "ac002", "title": "Last Date for Practical Submissions", "date": "2026-06-18", "type": "deadline", "description": "All lab records must be submitted" },
+    { "id": "ac003", "title": "Eid ul-Adha Holiday", "date": "2026-06-22", "type": "holiday", "description": "Institute closed" },
+    { "id": "ac004", "title": "End-Term Examinations Begin", "date": "2026-07-12", "endDate": "2026-07-24", "type": "exam", "description": "End-semester examinations for all programs" }
+  ],
+  "courses": [
+    {
+      "courseCode": "CS301",
+      "courseName": "Data Structures & Algorithms",
+      "credits": 4,
+      "instructor": "Prof. Anand Kumar",
+      "schedule": "Mon/Wed/Fri 10:00–11:00 AM",
+      "topics": ["Arrays & Linked Lists", "Stacks & Queues", "Trees & Heaps", "Graphs & BFS/DFS", "Dynamic Programming"],
+      "textbooks": ["Introduction to Algorithms — CLRS"],
+      "gradingPolicy": { "Mid-Term": 25, "End-Term": 40, "Assignments": 20, "Lab": 15 }
+    },
+    {
+      "courseCode": "CS302",
+      "courseName": "Operating Systems",
+      "credits": 4,
+      "instructor": "Prof. Rekha Sharma",
+      "schedule": "Tue/Thu 9:00–10:30 AM",
+      "topics": ["Process Management", "CPU Scheduling", "Memory Management", "Virtual Memory", "File Systems"],
+      "textbooks": ["Operating System Concepts — Silberschatz"],
+      "gradingPolicy": { "Mid-Term": 30, "End-Term": 40, "Lab": 20, "Quizzes": 10 }
+    }
+  ],
+  "policies": [
+    {
+      "keywords": ["attendance", "absent", "leave"],
+      "section": "Chapter 4 — Attendance Policy",
+      "content": "Minimum attendance requirement is 75% per course. Students below 75% will be detained from end-term examinations. Medical leave with certificate approved within 3 days is counted as present. Condonation for 60–74% is discretionary."
+    },
+    {
+      "keywords": ["grading", "gpa", "cgpa", "marks", "grade"],
+      "section": "Chapter 7 — Grading System",
+      "content": "10-point absolute grading: O (90-100)=10, A+ (80-89)=9, A (70-79)=8, B+ (60-69)=7, B (50-59)=6, C (45-49)=5, P (40-44)=4, F (<40)=0. CGPA is cumulative weighted average across all semesters."
+    },
+    {
+      "keywords": ["placement", "eligibility", "campus recruitment"],
+      "section": "Chapter 10 — Placement Eligibility",
+      "content": "Minimum CGPA 6.0, no active backlogs, 75% attendance in final year, registered with Placement Cell by August 31. Max 3 on-campus drives per student."
+    }
+  ]
+}

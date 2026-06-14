@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "breakfast": [
+      { "id": "bf01", "name": "Masala Dosa", "description": "Crispy dosa with spiced potato filling and sambar", "price": 35, "calories": 320, "category": "South Indian", "tags": ["popular", "spicy"], "available": true, "rating": 4.6, "isVeg": true },
+      { "id": "bf02", "name": "Poha", "description": "Flattened rice with mustard, curry leaves, and peanuts", "price": 25, "calories": 280, "category": "Snacks", "tags": ["light", "quick"], "available": true, "rating": 4.2, "isVeg": true },
+      { "id": "bf03", "name": "Bread Omelette", "description": "Two-egg omelette with toast and butter", "price": 40, "calories": 420, "category": "Egg", "tags": ["protein", "filling"], "available": true, "rating": 4.4, "isVeg": false },
+      { "id": "bf04", "name": "Idli Sambar", "description": "Steamed rice cakes with sambar and coconut chutney", "price": 30, "calories": 250, "category": "South Indian", "tags": ["healthy", "light"], "available": true, "rating": 4.5, "isVeg": true }
+    ],
+    "lunch": [
+      { "id": "ln01", "name": "Rajma Chawal", "description": "Kidney bean curry with steamed rice", "price": 60, "calories": 520, "category": "North Indian", "tags": ["popular", "protein"], "available": true, "rating": 4.7, "isVeg": true },
+      { "id": "ln02", "name": "Chicken Biryani", "description": "Fragrant basmati rice with marinated chicken and spices", "price": 100, "calories": 680, "category": "Biryani", "tags": ["popular", "non-veg"], "available": true, "rating": 4.8, "isVeg": false },
+      { "id": "ln03", "name": "Paneer Butter Masala + Roti", "description": "Creamy tomato-based paneer curry with 3 rotis", "price": 80, "calories": 560, "category": "North Indian", "tags": ["popular", "rich"], "available": true, "rating": 4.6, "isVeg": true }
+    ],
+    "dinner": [
+      { "id": "dn01", "name": "Chole Bhature", "description": "Spiced chickpea curry with fluffy fried bread", "price": 65, "calories": 620, "category": "North Indian", "tags": ["heavy", "popular"], "available": true, "rating": 4.6, "isVeg": true },
+      { "id": "dn02", "name": "Pav Bhaji", "description": "Mashed spiced vegetables with buttered pav", "price": 50, "calories": 480, "category": "Street Food", "tags": ["popular"], "available": true, "rating": 4.7, "isVeg": true }
+    ],
+    "snacks": [
+      { "id": "sn01", "name": "Samosa (2 pcs)", "description": "Crispy pastry with spiced potato filling", "price": 20, "calories": 280, "category": "Snacks", "tags": ["tea-time"], "available": true, "rating": 4.5, "isVeg": true },
+      { "id": "sn02", "name": "Chai", "description": "Masala tea with ginger and cardamom", "price": 10, "calories": 80, "category": "Beverages", "tags": ["tea-time"], "available": true, "rating": 4.8, "isVeg": true }
+    ]
+  }
+}

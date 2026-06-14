@@ -1,0 +1,52 @@
+{
+  "events": [
+    {
+      "id": "ev001",
+      "title": "TechFest 2026 — AI & Robotics Expo",
+      "description": "Annual technical festival featuring robotics competitions, AI demos, hackathons, and talks by industry experts.",
+      "category": "fest",
+      "date": "2026-06-16",
+      "startTime": "9:00 AM",
+      "endTime": "6:00 PM",
+      "venue": "Main Auditorium & Quad",
+      "organizer": "IEEE Student Chapter",
+      "registrationRequired": true,
+      "registrationLink": "https://techfest.example.edu/register",
+      "capacity": 800,
+      "registeredCount": 612,
+      "tags": ["AI", "robotics", "hackathon"],
+      "featured": true
+    },
+    {
+      "id": "ev002",
+      "title": "Machine Learning Workshop — Hands-On with PyTorch",
+      "description": "Intensive 4-hour workshop covering neural networks, training loops, and deploying ML models. Bring your laptop.",
+      "category": "workshop",
+      "date": "2026-06-15",
+      "startTime": "2:00 PM",
+      "endTime": "6:00 PM",
+      "venue": "CS Lab 301",
+      "organizer": "AI/ML Club",
+      "registrationRequired": true,
+      "registrationLink": "https://aiml.example.edu/pytorch-ws",
+      "capacity": 60,
+      "registeredCount": 54,
+      "tags": ["ML", "PyTorch", "hands-on"],
+      "featured": true
+    },
+    {
+      "id": "ev003",
+      "title": "Inter-College Cricket Tournament",
+      "description": "3-day cricket tournament with 8 colleges competing. Come cheer for the home team!",
+      "category": "sports",
+      "date": "2026-06-14",
+      "startTime": "8:00 AM",
+      "endTime": "5:00 PM",
+      "venue": "Sports Ground",
+      "organizer": "Sports Committee",
+      "registrationRequired": false,
+      "tags": ["cricket", "inter-college"],
+      "featured": false
+    }
+  ]
+}

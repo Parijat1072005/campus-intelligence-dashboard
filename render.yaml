@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: campus-library-mcp
+    runtime: node
+    rootDir: mcp-servers/library
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: campus-cafeteria-mcp
+    runtime: node
+    rootDir: mcp-servers/cafeteria
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: campus-events-mcp
+    runtime: node
+    rootDir: mcp-servers/events
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: campus-academics-mcp
+    runtime: node
+    rootDir: mcp-servers/academics
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000

@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --scrollbar-track: #F0F2F5;
+  --scrollbar-thumb: #C9CDD0;
+  --scrollbar-thumb-hover: #2563EB;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+@layer base {
+  body {
+    @apply bg-campus-bg text-campus-text;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-campus-card border border-campus-border rounded-xl shadow-sm;
+  }
+
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-dot.online {
+    @apply bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)];
+  }
+
+  .status-dot.offline {
+    @apply bg-rose-500;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-campus-border rounded-lg px-4 py-2.5
+           text-campus-text placeholder-campus-dim
+           focus:outline-none focus:border-campus-accent focus:ring-2 focus:ring-campus-accent/20
+           transition-all duration-200 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg
+           bg-campus-accent hover:bg-campus-accent-soft
+           text-white font-medium text-sm shadow-sm
+           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 rounded-lg
+           hover:bg-gray-100 text-campus-muted hover:text-campus-text
+           transition-all duration-200 text-sm;
+  }
+
+  .section-label {
+    @apply text-xs font-mono font-medium tracking-widest uppercase text-campus-muted;
+  }
+
+  .chat-message-user {
+    @apply ml-auto max-w-[78%] bg-campus-accent text-white
+           rounded-2xl rounded-tr-sm px-4 py-3 text-sm shadow-sm;
+  }
+
+  .chat-message-ai {
+    @apply mr-auto max-w-[85%] bg-white border border-campus-border
+           rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-campus-text shadow-sm;
+  }
+
+  .tool-chip {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
+           border border-campus-border bg-gray-50
+           text-xs font-mono text-campus-muted;
+  }
+}
+
+/* Subtle page glow for hero — warm white instead of blue */
+.glow-accent {
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 0%,
+    rgba(37, 99, 235, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* Faint grid — very light gray lines */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Typing indicator animation */
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40%           { opacity: 1; }
+}
+
+.typing-dot {
+  animation: blink 1.4s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Smooth reveal for cards */
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-reveal {
+  animation: cardReveal 0.35s ease-out forwards;
+}
+
+/* Slide-up for chat sidebar */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

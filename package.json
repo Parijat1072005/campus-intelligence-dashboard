@@ -1,0 +1,18 @@
+{
+  "name": "campus-intelligence-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "mcp-servers/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:servers\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:servers": "concurrently \"cd mcp-servers/library && npm run dev\" \"cd mcp-servers/cafeteria && npm run dev\" \"cd mcp-servers/events && npm run dev\" \"cd mcp-servers/academics && npm run dev\"",
+    "install:all": "npm install && cd frontend && npm install && cd ../mcp-servers/library && npm install && cd ../cafeteria && npm install && cd ../events && npm install && cd ../academics && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
