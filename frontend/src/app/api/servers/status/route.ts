@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import type { MCPServerName } from "@/types";
 
+export const dynamic = 'force-dynamic';
+
 const SERVERS: Record<MCPServerName, string> = {
   library: process.env.LIBRARY_MCP_URL || "http://localhost:3001",
   cafeteria: process.env.CAFETERIA_MCP_URL || "http://localhost:3002",
@@ -14,7 +16,7 @@ export async function GET() {
       const start = Date.now();
       try {
         const res = await fetch(`${url}/health`, {
-          signal: AbortSignal.timeout(3000),
+          signal: AbortSignal.timeout(10000),
         });
         return {
           server: name as MCPServerName,
