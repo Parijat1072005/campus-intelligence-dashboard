@@ -246,7 +246,7 @@ function UsersAdmin({ showToast, currentUser }: { showToast: (m: string, t?: "su
         <ShieldCheck className="w-5 h-5 mt-0.5 shrink-0 text-purple-600" />
         <div>
           <p className="font-semibold">User Management</p>
-          <p className="text-purple-600 mt-0.5">Add or remove admin accounts. All admins can manage campus data across all tabs. The <code className="font-mono bg-purple-100 px-1 rounded">superadmin</code> account cannot be removed.</p>
+          <p className="text-purple-600 mt-0.5">Add or remove admin accounts. All admins can manage campus data across all tabs. You cannot delete your own account while logged in.</p>
         </div>
       </div>
 
@@ -304,7 +304,7 @@ function UsersAdmin({ showToast, currentUser }: { showToast: (m: string, t?: "su
                     : <><Shield className="w-3 h-3 text-campus-accent" /> Admin</>}
                 </p>
               </div>
-              {a.role !== "superadmin" && (
+              {a.username !== currentUser ? (
                 <button
                   onClick={() => removeAdmin(a.username)}
                   className="btn-ghost text-rose-600 hover:text-rose-700 p-1.5"
@@ -312,9 +312,8 @@ function UsersAdmin({ showToast, currentUser }: { showToast: (m: string, t?: "su
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
-              )}
-              {a.role === "superadmin" && (
-                <span className="text-xs text-purple-600 font-medium px-2 py-1 bg-purple-50 border border-purple-200 rounded-full">Protected</span>
+              ) : (
+                <span className="text-xs text-campus-dim font-medium px-2 py-1 bg-gray-100 border border-campus-border rounded-full">You</span>
               )}
             </div>
           ))}

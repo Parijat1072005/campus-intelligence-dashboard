@@ -113,11 +113,8 @@ app.post("/admin/users", (req, res) => {
   res.json({ success: true });
 });
 
-// Remove an admin (superadmin cannot be removed)
+// Remove an admin (cannot remove yourself — checked on the frontend)
 app.delete("/admin/users/:username", (req, res) => {
-  if (req.params.username === "superadmin") {
-    return res.status(403).json({ error: "Cannot remove the superadmin account" });
-  }
   const db = readAdmins();
   db.admins = db.admins.filter((a: any) => a.username !== req.params.username);
   writeAdmins(db);
