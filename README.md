@@ -158,9 +158,9 @@ cd frontend
 cp .env.example .env.local
 ```
 
-Open `frontend/.env.local` in VS Code and replace `xai-your-key-here` with your real key:
+Open `frontend/.env.local` in VS Code and replace `gemini-your-key-here` with your real key:
 ```
-XAI_API_KEY=xai-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GEMINI_API_KEY=xai-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ---
