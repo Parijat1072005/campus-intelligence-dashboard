@@ -15,19 +15,24 @@ export async function GET() {
     Object.entries(SERVERS).map(async ([name, url]) => {
       const start = Date.now();
       try {
-        const res = await fetch(`${url}/health`, {
+        const cleanUrl = url.endsWith("/") ? url.slice(0, -1) : url;
+        const res = await fetch(`${cleanUrl}/health`, {
           signal: AbortSignal.timeout(10000),
+          cache: "no-store",
         });
         return {
           server: name as MCPServerName,
           online: res.ok,
           latencyMs: Date.now() - start,
+          url: url,
         };
-      } catch {
+      } catch (err) {
         return {
           server: name as MCPServerName,
           online: false,
           latencyMs: Date.now() - start,
+          url: url,
+          error: String(err),
         };
       }
     })
