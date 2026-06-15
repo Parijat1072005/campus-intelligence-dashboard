@@ -1,3 +1,5 @@
+# [Link to website](https://campus-intelligence-dashboard-front.vercel.app/)
+
 # CampusIQ — Unified Campus Intelligence Dashboard
 
 > One AI-powered dashboard for library, cafeteria, events, and academics.  
