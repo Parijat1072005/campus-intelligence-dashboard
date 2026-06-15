@@ -47,7 +47,7 @@ campus-intelligence-dashboard/
 │   │   │   ├── layout.tsx                # Root layout + Google fonts
 │   │   │   ├── globals.css               # Tailwind + custom classes
 │   │   │   └── api/
-│   │   │       ├── chat/route.ts         # Grok agentic loop + MCP routing
+│   │   │       ├── chat/route.ts         # Gemini agentic loop + MCP routing
 │   │   │       └── servers/status/       # MCP health check endpoint
 │   │   ├── components/
 │   │   │   ├── dashboard/
@@ -81,12 +81,12 @@ campus-intelligence-dashboard/
 
 ## ─── SETUP GUIDE ────────────────────────────────────────────────────────────
 
-### Step 1 — Get your FREE Grok API Key
+### Step 1 — Get your FREE Gemini API Key
 
 1. Go to https://aistudio.google.com/app/apikey
 2. Sign in with any Google account
 3. Click "Create API Key" → select any project
-4. Copy the key (starts with AIzaSy...)
+4. Copy the key 
 
 ---
 
@@ -106,7 +106,7 @@ npm --version    # should show v9 or higher
 
 **Option A — Clone from GitHub (after you push)**
 ```bash
-git clone https://github.com/YOUR_USERNAME/campus-intelligence-dashboard.git
+git clone https://github.com/Parijat1072005/campus-intelligence-dashboard.git
 cd campus-intelligence-dashboard
 ```
 
@@ -155,12 +155,12 @@ cd ../..
 
 ```bash
 cd frontend
-cp .env.example .env.local
+copy frontend\.env.example frontend\.env.local
 ```
 
-Open `frontend/.env.local` in VS Code and replace `gemini-your-key-here` with your real key:
+Open `frontend/.env.local` in VS Code and replace `gemini-xxxxxxxxx` with your real key:
 ```
-GEMINI_API_KEY=xai-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GEMINI_API_KEY=gemini-xxxxxxxxxx
 ```
 
 ---
@@ -222,7 +222,7 @@ git init
 git add .
 git commit -m "Initial commit — CampusIQ"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/campus-intelligence-dashboard.git
+git remote add origin https://github.com/Parijat1072005/campus-intelligence-dashboard.git
 git push -u origin main
 ```
 
@@ -269,7 +269,7 @@ In the Vercel project settings → **Environment Variables**, add all of these:
 
 | Key | Value |
 |---|---|
-| `XAI_API_KEY` | `xai-your-actual-key` |
+| `GEMINI_API_KEY` | `your-actual-key` |
 | `LIBRARY_MCP_URL` | `https://campus-library-mcp.onrender.com` |
 | `CAFETERIA_MCP_URL` | `https://campus-cafeteria-mcp.onrender.com` |
 | `EVENTS_MCP_URL` | `https://campus-events-mcp.onrender.com` |
@@ -291,7 +291,7 @@ Vercel builds and deploys in ~2 minutes. You'll get a live URL like:
 ### Render free tier cold starts
 Render free services spin down after 15 minutes of inactivity. The first request after idle takes ~30 seconds. This is normal — it warms up and works fine after.
 
-**Fix:** Use [UptimeRobot](https://uptimerobot.com) (free) to ping each MCP server URL every 10 minutes to keep them warm.
+**Fix:** Use [UptimeRobot](https://uptimerobot.com) (free) to ping each MCP server URL every 10 minutes to keep them warm if using free tier of Render.
 
 ### Vercel + Render CORS
 All MCP servers already have CORS enabled (`cors()` middleware). No extra config needed.
