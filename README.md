@@ -13,7 +13,7 @@ College campuses have data scattered everywhere: library portal, cafeteria PDFs,
 ---
 
 ## Features
-- **AI Chat (Grok-powered, FREE)** — Natural-language queries routed to the right campus server(s) automatically
+- **AI Chat (Gemini-powered, FREE)** — Natural-language queries routed to the right campus server(s) automatically
 - **Library** — Search books, live availability, copy counts, shelf location, weekly hours
 - **Cafeteria** — Full menu by meal, live open/closed status, crowd level + wait time
 - **Events** — Upcoming events with category filters, featured fests, registration links
@@ -29,7 +29,7 @@ College campuses have data scattered everywhere: library portal, cafeteria PDFs,
 | Layer | Technology |
 |---|---|
 | Frontend | Next.js 14, TypeScript, Tailwind CSS |
-| AI | **Grok grok-3-mini** via xAI API (free tier, OpenAI-compatible) |
+| AI | **Gemini** via GEMINI API (free tier, OpenAI-compatible) |
 | MCP Servers | Node.js + Express + TypeScript (4 servers) |
 | Icons | Lucide React |
 | Hosting | Vercel (frontend) + Render (MCP servers) |
