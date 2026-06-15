@@ -2,12 +2,7 @@
 
 # CampusIQ — Unified Campus Intelligence Dashboard
 
-> One AI-powered dashboard for library, cafeteria, events, and academics.  
-> Powered by **Grok (xAI) — free tier** via OpenAI-compatible API + MCP servers.
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue?logo=typescript) ![Grok](https://img.shields.io/badge/Grok-xAI%20Free-orange) ![License](https://img.shields.io/badge/license-MIT-green)
-
----
 
 ## The Problem
 College campuses have data scattered everywhere: library portal, cafeteria PDFs, Google Calendars for events, and 200-page academic handbooks. Students waste time digging through 5 different systems.
