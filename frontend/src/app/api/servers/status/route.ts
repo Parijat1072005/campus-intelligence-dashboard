@@ -4,10 +4,10 @@ import type { MCPServerName } from "@/types";
 export const dynamic = 'force-dynamic';
 
 const SERVERS: Record<MCPServerName, string> = {
-  library: process.env.LIBRARY_MCP_URL || "http://localhost:3001",
-  cafeteria: process.env.CAFETERIA_MCP_URL || "http://localhost:3002",
-  events: process.env.EVENTS_MCP_URL || "http://localhost:3003",
-  academics: process.env.ACADEMICS_MCP_URL || "http://localhost:3004",
+  library: process.env.NEXT_PUBLIC_LIBRARY_MCP_URL || process.env.LIBRARY_MCP_URL || "http://localhost:3001",
+  cafeteria: process.env.NEXT_PUBLIC_CAFETERIA_MCP_URL || process.env.CAFETERIA_MCP_URL || "http://localhost:3002",
+  events: process.env.NEXT_PUBLIC_EVENTS_MCP_URL || process.env.EVENTS_MCP_URL || "http://localhost:3003",
+  academics: process.env.NEXT_PUBLIC_ACADEMICS_MCP_URL || process.env.ACADEMICS_MCP_URL || "http://localhost:3004",
 };
 
 export async function GET() {
