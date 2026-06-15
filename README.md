@@ -86,11 +86,10 @@ campus-intelligence-dashboard/
 
 ### Step 1 — Get your FREE Grok API Key
 
-1. Go to **https://console.x.ai**
-2. Sign in with your X (Twitter) account
-3. Click **"API Keys"** in the left sidebar
-4. Click **"Create API Key"** → give it a name → copy the key
-5. xAI gives **free credits** monthly — more than enough for a project
+1. Go to https://aistudio.google.com/app/apikey
+2. Sign in with any Google account
+3. Click "Create API Key" → select any project
+4. Copy the key (starts with AIzaSy...)
 
 ---
 
